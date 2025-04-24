@@ -1,0 +1,99 @@
+# according to xgw/clion
+# basic style
+BasedOnStyle: LLVM
+
+# indent
+ContinuationIndentWidth: 4
+IndentCaseLabels: true
+IndentPPDirectives: None
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+# 对齐设置
+AccessModifierOffset: -4 # 一些关键字的缩进
+AlignAfterOpenBracket: Align  # 括号内参数对齐方式：DontAlign、Align、AlwaysBreak
+AlignOperands: true           # 运算符左右对齐
+AlignConsecutiveMacros: true
+AlignConsecutiveAssignments: true  # 连续赋值对齐
+AlignConsecutiveDeclarations: true # 连续声明对齐
+AlignTrailingComments: true
+
+# 换行控制
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false   # 不允许 if 语句写在一行
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterReturnType: None
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBraces: Custom   # 大括号换行风格：Attach、Linux、Mozilla、Stroustrup、Allman 等
+BraceWrapping:
+  AfterClass: false
+  AfterControlStatement: Never
+  AfterEnum: false
+  AfterFunction: false
+  AfterNamespace: false
+  AfterUnion: false
+  BeforeCatch: true
+  BeforeElse: false
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: true
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: BeforeColon
+
+# 注释格式
+CommentPragmas: '^ IWYU pragma:'  # 保留特定注释格式
+IndentWrappedFunctionNames: true # 换行后函数名缩进
+ReflowComments: false
+
+# 空格规则
+SpaceAfterCStyleCast: false
+SpaceAfterTemplateKeyword: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements  # if/for/while 后加空格，函数调用不加
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 2
+SpacesInAngles: false                 # 模板参数不加空格：vector<int> 而不是 vector< int >
+SpacesInCStyleCastParentheses: false # C风格强转不加空格：(int)x 而不是 ( int )x
+SpacesInContainerLiterals: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+# 命名空间缩进
+NamespaceIndentation: All  # 所有命名空间内都缩进（可选值：None、Inner、All）
+
+# include 处理
+IncludeBlocks: Preserve    # 保持 include 块顺序
+SortIncludes: true         # 自动排序 include 头文件
+IncludeCategories:
+  - Regex: '^<.*\.h>'
+    Priority: 1
+  - Regex: '^".*\.h"'
+    Priority: 2
+
+# 指针和引用格式
+DerivePointerAlignment: false # 禁用从样式中自动推断
+PointerAlignment: Right        # 指针符号靠左（int* ptr），可选 Right / Middle
+
+# 限制行宽
+ColumnLimit: 120  # 每行最多字符数
+
+# 代码块
+KeepEmptyLinesAtTheStartOfBlocks: true
+MaxEmptyLinesToKeep: 1
+
+# 换行风格（建议统一 Unix 风格）
+DeriveLineEnding: false
+UseCRLF: false
+
+# don't know why, from xgw
+CompactNamespaces: false
